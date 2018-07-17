@@ -9,11 +9,18 @@ import fs from 'fs'
 import path from 'path'
 import {connection} from '../../app'
 
-const MAX_SENTENCE_NUM = 1;
-
 class GenerateAudio {
 
-    constructor(options){
+    constructor(opt={}){
+        const defaultOptions = {
+            speechType: 0,  //默认美式口音, 1英 0美
+            maxSentenceNum: 1, //例句数量
+            isAddReadTranslate: true, //是否添加单词汉译
+            isAddSenTranslate: true, //是有拥有例句汉译
+            wordStayBetween: 0, //每个单词之间停留的时间 unit: ms
+            beforeReadWord: true, //先朗读单词后朗读例子系列
+            wordAndSenSort: 0//例句的英文与汉译播放的先后顺序 0-英前译后  1-译前英后
+        }
         this.getWordUrl = (word) => `http://dict.youdao.com/speech?audio=${word}`
         this.getSentenceUrl = (word)=>`http://dict.youdao.com/jsonapi?q=lj:${word}&doctype=json&keyfrom=mac.main&id=&vendor=cidian.youdao.com&appVer=1.4&client=macdict&le=eng`
         this.requestAudioOptions = {
@@ -23,6 +30,7 @@ class GenerateAudio {
             method: 'GET',
             headers: {}
         }
+        this.options = Object.assign(defaultOptions, opt)
         this.currentSearchedWord = [];
     };
 
@@ -128,11 +136,12 @@ class GenerateAudio {
      */
     sentenceFormatFilter = (dataSource) => {
         let sentenceArr = [];
+        const {maxSentenceNum} = this.options;
         try { dataSource = JSON.parse(dataSource.toString()) } catch (err) {
             console.log(err);
         }
         const sentence_pair = _.get(dataSource,"blng_sents.sentence-pair",[])
-        for (let i = 0; i < MAX_SENTENCE_NUM; i++) {
+        for (let i = 0; i < maxSentenceNum; i++) {
             if ( !sentence_pair[i] ) {  console.warn("没有示例句"); break; }
             let {sentence} = sentence_pair[i];
             let sentence_translate = sentence_pair[i]["sentence-translation"]

@@ -54,6 +54,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "baidu-aip-sdk": "^2.3.3",
     "ejs": "^2.5.7",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "orm": "^5.0.2"
   }
 }
