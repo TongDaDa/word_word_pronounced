@@ -46,6 +46,7 @@ class GenerateAudio {
     requestAudioFile = (cb) => {
         let buffer = Buffer.alloc(0)
         let num = 0;
+        const { maxSentenceNum } = this.options;
         this.currentSearchedWord.forEach(({word, translated}, key) => {
             const wordPro = this.requestWordAudio(word);
             const wordTranslated = audioCompond(translated);
@@ -64,7 +65,7 @@ class GenerateAudio {
                     Promise.all([audioCompond(sentence),audioCompond(sentence_translate)]).then(async (res) => {
                         if (!res) { throw TypeError("audioCompond type is error") }
                         const [senAudioBuf,SenTraAudioBuf] = res;
-                        const isEndSentence = i === MAX_SENTENCE_NUM-1;
+                        const isEndSentence = i === maxSentenceNum-1;
                         sentences = Buffer.concat([sentences, senAudioBuf, SenTraAudioBuf])
                         if ( isEndSentence ) {
                             ++num;  //一个示例正式结束
