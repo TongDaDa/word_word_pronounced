@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>layout</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body style="overflow:hidden">
+     <div id="root">
+        <div class="login-wrapper">
+            <div class="ui middle aligned center aligned grid login-content">
+                <div class="column">
+                  <h2 class="ui teal image header">
+                    <img src="assets/images/logo.jpeg" class="image">
+                    <div class="content">
+                      test mine bugs
+                    </div>
+                  </h2>
+                  <form class="ui large form">
+                    <div class="ui stacked segment">
+                      <div class="field">
+                        <div class="ui left icon input">
+                          <i class="user icon"></i>
+                          <input type="text" id="user" name="email" placeholder="E-mail address">
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="ui left icon input">
+                          <i class="lock icon"></i>
+                          <input type="password" id="password" name="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <div id="submit" class="ui fluid large teal submit button">Login</div>
+                    </div>
+              
+                    <div class="ui error message"></div>
+              
+                  </form>
+              
+                  <div class="ui message">
+                    New to us? <a href="#">Sign Up</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+      <script src="//cdn.bootcss.com/semantic-ui/2.1.8/semantic.min.js"></script>
+      <script src="/assets/js/login.js"></script>
+  </body>
+</html>

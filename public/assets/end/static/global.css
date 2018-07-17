@@ -1,0 +1,120 @@
+body, html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #fafafa;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+ul li, ol li {
+  list-style: none;
+}
+
+h1{
+  font-size: 100%;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  height: inherit;
+}
+
+.el-header {
+  background-color: #242f41;
+  color: #fff;
+  line-height: 60px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.el-aside {
+  color: #333;
+  margin-top: 60px;
+  background: #324158;
+  width:200px !important;
+}
+.el-aside::-webkit-scrollbar {
+  width: 0px;
+  background-color: rgba(0, 0, 0, 0.34);
+}
+
+.el-main {
+  color: #333;
+  margin: 80px auto 20px;
+  background: #fff;
+  max-width: 1040px;
+  height: inherit;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+/*表格样式*/
+/*.advertisement_table_header {*/
+  /*background: #ededed;*/
+/*}*/
+
+.cell {
+  text-align: center;
+}
+.cell {
+  text-align: center;
+}
+.cell > a {
+  cursor: pointer;
+  color: #409eff;
+}
+.el-table thead {
+  background: #ededed;
+}
+.el-table tr {
+  background: none;
+}
+.el-table--border th, .el-table__fixed-right-patch {
+  text-align: center;
+}
+
+.el-container.is-vertical {
+  height:inherit;
+}
+
+.pagination {
+  margin-top: 20px;
+  float: right;
+}
+
+
+.searchModule {
+  margin-bottom: 20px;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+
+.left{ float:left; }
+
+.clear::after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.right{ float:right; }
+
+.searchModule > div {
+  width: 200px;
+}
+
+
+.el-date-picker {
+  z-index: 98!important;
+}

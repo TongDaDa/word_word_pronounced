@@ -1,0 +1,22 @@
+#root{
+    height: 100%;
+}
+.login-wrapper{
+    position: relative;
+    height: 100%;
+    text-align: center;
+    min-height: 380px;
+}
+
+.login-wrapper::before{
+    content: " ";
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+}
+.login-content{
+    display: inline-block !important;
+    vertical-align: middle;
+    min-width: 400px;
+}

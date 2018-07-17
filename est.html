@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        
+
+    </body>
+
+    <script>
+
+        window.addEventListener("message",(e)=>{
+            console.log(e);
+        })
+    var myWorker = new Worker('./test.js');
+// navigator.serviceWorker.register('http://127.0.0.1:8080/vendor.5bd88fb616467da96301.js', {scope: '/sw-test/'})
+        //     .then(function(reg) {
+        //         // registration worked
+        //         console.log('Registration succeeded. Scope is ' + reg.scope);
+        //     }).catch(function(error) {
+        //     // registration failed
+        //     console.log('Registration failed with ' + error);
+        // });
+    </script>
+</html>
